@@ -20,7 +20,7 @@
         <div class="alternatives">
           <p>Or register with:</p>
           <button type="button" class="btn-google" @click="registerWithGoogle">
-            
+
           </button>
           <button type="button" class="btn-facebook" @click="registerWithFacebook">
             <font-awesome-icon icon="fa-brands fa-facebook" />
@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import ReusableFormInput from "./forms/ReusableFormInput.vue";
-import ReusableButton from "./forms/ReusableButton.vue";
+import ReusableFormInput from '../components/forms/ReusableFormInput.vue'
+import ReusableButton from '../components/forms/ReusableButton.vue'
 
 export default {
   name: "RegisterPage",
@@ -125,5 +125,18 @@ export default {
   font-size: 30px;
   margin-bottom: 20px;
   /* Added margin */
+}
+
+.alternatives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.alternatives p {
+  color: #f1c503;
+  text-align: center;
+  margin-bottom: 20px;
 }
 </style>

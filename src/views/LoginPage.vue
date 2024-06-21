@@ -13,17 +13,18 @@
           <label class="form-check-label text-white" for="rememberMe">Remember me</label>
         </div>
         <div class="register">
-          <p>Don't have an account? <a href="#">Register Now</a></p>
+          <p>Don't have an account? <router-link to="/register">Register Now</router-link></p>
         </div>
         <ReusableButton buttonClass="btn-primary">Login</ReusableButton>
+
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import ReusableFormInput from './forms/ReusableFormInput.vue'
-import ReusableButton from './forms/ReusableButton.vue'
+import ReusableFormInput from '../components/forms/ReusableFormInput.vue'
+import ReusableButton from '../components/forms/ReusableButton.vue'
 
 export default {
   name: "LoginPage",
@@ -42,7 +43,8 @@ export default {
     handleSubmit() {
       // Handle form submission
       console.log("Form submitted", this.email, this.password, this.rememberMe);
-    }
+    },
+
   }
 }
 </script>
