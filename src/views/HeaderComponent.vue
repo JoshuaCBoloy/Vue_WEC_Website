@@ -70,21 +70,6 @@ export default {
       showHeader: true
     }
   },
-  name: "HeaderComponent",
-  watch: {
-    $route(to) {
-      this.updateHeaderVisibility(to.path);
-    }
-  },
-  mounted() {
-    this.updateHeaderVisibility(this.$route.path);
-  },
-  methods: {
-    updateHeaderVisibility(path) {
-      const noHeaderRoutes = ['/login', '/register'];
-      this.showHeader = !noHeaderRoutes.includes(path);
-    }
-  }
 }
 </script>
 

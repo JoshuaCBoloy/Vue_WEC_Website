@@ -6,7 +6,7 @@ import eBooksPage from '@/views/eBooksPage.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomeView
   },

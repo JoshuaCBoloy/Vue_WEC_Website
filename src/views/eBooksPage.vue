@@ -1,7 +1,11 @@
 <template>
   <HeaderComponent />
-  <router-view />
+  <div class="featured-book">
+
+  </div>
 </template>
+
+
 
 <script>
 

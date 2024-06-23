@@ -15,6 +15,7 @@
         <div class="register">
           <p>Don't have an account? <router-link to="/register">Register Now</router-link></p>
         </div>
+
         <ReusableButton buttonClass="btn-primary">Login</ReusableButton>
 
       </form>

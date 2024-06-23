@@ -20,10 +20,10 @@
         <div class="alternatives">
           <p>Or register with:</p>
           <button type="button" class="btn-google" @click="registerWithGoogle">
-
+            <font-awesome-icon :icon="['fab', 'google']" />
           </button>
           <button type="button" class="btn-facebook" @click="registerWithFacebook">
-            <font-awesome-icon icon="fa-brands fa-facebook" />
+            <font-awesome-icon :icon="['fab', 'facebook']" />
           </button>
         </div>
         <ReusableButton buttonClass="btn-primary" @click="handleSubmit">
@@ -62,15 +62,12 @@ export default {
 
 <style scoped>
 .login-container {
-  background: #110f0d;
+  background: #110f0d url("../assets/images/wec-sign-in-2.png") no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../assets/images/wec-sign-in-2.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   padding: 20px;
 }
 
@@ -79,7 +76,8 @@ export default {
   width: 100%;
   margin: 50px 20px;
   padding: 20px;
-  background-color: #110f0d;
+  background-color: rgba(17, 15, 13, 0.95);
+  /* Add transparency to form container */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #fff;
@@ -124,14 +122,46 @@ export default {
   text-align: center;
   font-size: 30px;
   margin-bottom: 20px;
-  /* Added margin */
 }
 
-.alternatives {
+/* Buttons */
+.btn-google {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-google .fa-google {
+  color: #db4437;
+}
+
+.btn-facebook .fa-facebook {
+  color: #fff;
+}
+
+/* Ensure buttons look consistent */
+.btn-google,
+.btn-facebook {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.btn-google:hover,
+.btn-facebook:hover {
+  opacity: 0.9;
 }
 
 .alternatives p {
