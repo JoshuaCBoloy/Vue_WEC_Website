@@ -7,7 +7,7 @@ import './assets/styles/styles.css';
 import './assets/styles/main.css';
 import './assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
 import router from './router'
 import FontAwesomeIcon from './plugins/font-awesome';
 
