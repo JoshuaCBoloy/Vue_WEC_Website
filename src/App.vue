@@ -11,4 +11,8 @@ export default {
 </script>
 
 
-<style></style>
+<style>
+body {
+  background-image: url('./assets/images/Visitors-1-min.png');
+}
+</style>

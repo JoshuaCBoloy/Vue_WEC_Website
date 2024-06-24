@@ -96,9 +96,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-image: url('../assets/images/Visitors-1-min.png');
-}
 .ebooks-page {
   margin-top: 131px;
   font-family: "Glegoo", sans-serif;
@@ -145,5 +142,9 @@ body {
   color: #110f0d;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
+}
+
+.lead {
+  font-size: 14px;
 }
 </style>
