@@ -122,6 +122,7 @@ body {
 }
 
 .card {
+  width: 270px;
   border: none;
   overflow: hidden;
   border-radius: 10px;
