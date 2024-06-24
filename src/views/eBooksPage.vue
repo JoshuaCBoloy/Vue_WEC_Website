@@ -155,4 +155,8 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
 }
+
+.lead {
+  font-size: 14px;
+}
 </style>

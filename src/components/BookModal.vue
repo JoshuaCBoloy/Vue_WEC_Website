@@ -22,6 +22,9 @@
 </template>
 
 <script>
+import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap;
+
 export default {
   name: 'BookModal',
   props: {
