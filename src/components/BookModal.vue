@@ -50,6 +50,7 @@ export default {
 
 <style scoped>
 .modal-content {
+  text-align: center;
   background-color: #1c1c1c;
   color: #f1c503;
 }
