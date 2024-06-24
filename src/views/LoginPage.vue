@@ -12,13 +12,22 @@
           <input type="checkbox" class="form-check-input" id="rememberMe" v-model="rememberMe" />
           <label class="form-check-label text-white" for="rememberMe">Remember me</label>
         </div>
+        <ReusableButton buttonClass="btn-primary">Login</ReusableButton>
+      </form>
+      <div class="alternatives">
+          <p>Or login with:</p>
+            <div>
+              <button type="button" class="btn-google" @click="registerWithGoogle">
+              <font-awesome-icon :icon="['fab', 'google']" />
+              </button>
+              <button type="button" class="btn-facebook" @click="registerWithFacebook">
+              <font-awesome-icon :icon="['fab', 'facebook']" />
+              </button>
+            </div>
+        </div>
         <div class="register">
           <p>Don't have an account? <router-link to="/register">Register Now</router-link></p>
         </div>
-
-        <ReusableButton buttonClass="btn-primary">Login</ReusableButton>
-
-      </form>
     </div>
   </div>
 </template>
@@ -93,6 +102,7 @@ export default {
 .register {
   color: #fff;
   font-size: 12px;
+  margin-top: 10px;
 }
 
 .register a {
@@ -114,5 +124,62 @@ export default {
   text-align: center;
   font-size: 30px;
   margin-bottom: 20px;
+}
+
+.btn-google {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-google .fa-google {
+  color: #db4437;
+}
+
+.btn-facebook .fa-facebook {
+  color: #fff;
+}
+
+/* Ensure buttons look consistent */
+.btn-google,
+.btn-facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 140px;
+}
+
+.btn-google:hover,
+.btn-facebook:hover {
+  opacity: 0.9;
+}
+
+.alternatives {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.alternatives p {
+  color: #f1c503;
+  text-align: center;
+  margin: 0;
+}
+
+.alternatives div {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add space between buttons */
 }
 </style>

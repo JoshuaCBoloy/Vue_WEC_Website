@@ -18,13 +18,15 @@
           <p>By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
         </div>
         <div class="alternatives">
-          <p>Or register with:</p>
-          <button type="button" class="btn-google" @click="registerWithGoogle">
-            <font-awesome-icon :icon="['fab', 'google']" />
-          </button>
-          <button type="button" class="btn-facebook" @click="registerWithFacebook">
-            <font-awesome-icon :icon="['fab', 'facebook']" />
-          </button>
+          <p>Or login with:</p>
+            <div>
+              <button type="button" class="btn-google" @click="registerWithGoogle">
+              <font-awesome-icon :icon="['fab', 'google']" />
+              </button>
+              <button type="button" class="btn-facebook" @click="registerWithFacebook">
+              <font-awesome-icon :icon="['fab', 'facebook']" />
+              </button>
+            </div>
         </div>
         <ReusableButton buttonClass="btn-primary" @click="handleSubmit">
           Register
@@ -157,6 +159,7 @@ export default {
   align-items: center;
   border-radius: 5px;
   width: 100%;
+  max-width: 140px;
 }
 
 .btn-google:hover,
@@ -164,9 +167,20 @@ export default {
   opacity: 0.9;
 }
 
+.alternatives {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .alternatives p {
   color: #f1c503;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0;
+}
+
+.alternatives div {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add space between buttons */
 }
 </style>

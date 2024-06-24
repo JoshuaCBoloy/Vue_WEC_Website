@@ -52,7 +52,7 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: var(--header-font);
 }
 
 a {
@@ -808,8 +808,9 @@ section,
   --heading-color: #ffffff;
   width: 100%;
   min-height: 100vh;
+  height: 100%;
   position: relative;
-  padding: 120px 0 80px 0;
+  padding: 60px 0 80px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -836,13 +837,17 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .hero h2 {
+  text-align: left;
   margin: 0;
-  font-size: 56px;
+  font-size: 40px;
   font-weight: 700;
-  font-family: var(--nav-font);
+  font-family: var(--header-font);
+  line-height: 52px;
 }
 
 .hero h2 span {
@@ -850,9 +855,13 @@ section,
 }
 
 .hero p {
-  margin: 10px 0 0 0;
-  font-size: 24px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-align: left;
+  margin: 10px 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--header-font);
+  line-height: 26px;
 }
 
 .hero .icon-box {
