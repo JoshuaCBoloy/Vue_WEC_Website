@@ -2,15 +2,15 @@
   <header id="header" class="header d-flex align-items-center fixed-top" v-if="showHeader">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="../assets/images/wisdom-dark-no-title.png" alt="">
+      <a href="/home" class="logo d-flex align-items-center me-auto me-lg-0">
+        <img src="../assets/images/wisdom-dark.png" alt="">
         <h1 class="sitename">Wisdom e<span>B</span>ooks Club</h1>
         <span></span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/home">Home</router-link></li>
           <li class="dropdown"><a href="#"><span>Pearls of Wisdom</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -58,7 +58,7 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="index.html#about">Subscribe</a>
+      <a class="btn-getstarted" href="#">Subscribe</a>
     </div>
   </header>
 </template>
