@@ -30,38 +30,8 @@
       </section>
 
       <!-- Books Carousel Section -->
-      <section class="books-grid py-5">
-        <div class="container">
-          <h2 class="section-title mb-4">Popular eBooks</h2>
-          <div id="booksCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div v-for="(chunk, index) in bookChunks" :key="index"
-                :class="['carousel-item', { active: index === 0 }]">
-                <div class="row">
-                  <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="book in chunk" :key="book.id">
-                    <div class="card">
-                      <img :src="book.image" :alt="book.title" class="card-img-top" />
-                      <div class="card-body d-flex flex-column">
-                        <h5 class="card-title"><b>{{ book.title }}</b></h5>
-                        <p class="card-text">{{ book.author }}</p>
-                        <button class="btn btn-primary mt-auto" @click="openModal(book)">Read Now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#booksCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#booksCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </section>
+      <BooksCarousel :books="books" @open-modal="openModal" />
+
 
       <!-- Book Details Modal -->
       <BookModal :book="selectedBook" ref="bookModal" />
@@ -71,18 +41,20 @@
 
 <script>
 import HeaderComponent from './HeaderComponent.vue';
-import BookModal from '../components/BookModal.vue';
+import BookModal from '../components/eBooks/BookModal.vue';
+import BooksCarousel from '../components/eBooks/BooksCarousel.vue';
 
 export default {
   name: "eBooksPage",
   components: {
     HeaderComponent,
     BookModal,
+    BooksCarousel
   },
   data() {
     return {
       books: [
-        { id: 1, title: "A Brief Account of the Rise and Progress of the People Called Quakers", author: "William Pen", image: require('../assets/images/ebooks-cover/1.png'), description: "Description for Book 1" },
+        { id: 1, title: "History of the Early Church", author: "H. Lietzman", image: require('../assets/images/ebooks-cover/10.png'), description: "Description for Book 1" },
         { id: 2, title: "A Comparative View of Religions", author: "Johannes Henricus Scholten", image: require('../assets/images/ebooks-cover/2.png'), description: "Description for Book 2" },
         { id: 3, title: "A Critical Exposition of the Popular Jihad", author: "Moulavi Gheragh Ali", image: require('../assets/images/ebooks-cover/3.png'), description: "Description for Book 3" },
         { id: 4, title: "A Dictionary of Symbols", author: "J.E. Cirlot", image: require('../assets/images/ebooks-cover/4.png'), description: "Description for Book 4" },
@@ -157,7 +129,7 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 500px;
   width: 270px;
   border: none;
   overflow: hidden;
@@ -168,8 +140,8 @@ body {
 .carousel {
   display: flex;
   justify-content: space-between;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 .card-img-top {
