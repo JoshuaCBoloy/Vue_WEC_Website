@@ -41,7 +41,7 @@
           <li class="dropdown"><a href="#"><span>eBooks</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><router-link to="/ebooks">Book Library</router-link></li>
-              <li><a href="#">Book Categories</a></li>
+              <li><router-link to="/ebooks">Book Categories</router-link></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>eStudy Bible</span> <i

@@ -12,14 +12,13 @@
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title"><b>{{ book.title }}</b></h5>
                     <p class="card-text">{{ book.author }}</p>
-                    <p class="card-text">{{ book.description }}</p>
                     <button class="btn btn-primary mt-auto" @click="openModal(book)">Read Now</button>
                     <div class="rating">
                       <font-awesome-icon v-for="n in 5" :key="n" :icon="[book.userRating >= n ? 'fas' : 'far', 'star']"
                         class="fa-star" @click="setRating(book, n)" />
                     </div>
                     <textarea v-model="book.userComment" placeholder="Add a comment..." class="form-control"></textarea>
-                    
+
                   </div>
                 </div>
               </div>
@@ -137,7 +136,7 @@ textarea {
   color: #110f0d;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 80px;
 }
 
 .carousel-control-prev,

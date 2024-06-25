@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import RegisterPage from '@/views/RegisterPage.vue'
 import eBooksPage from '@/views/eBooksPage.vue'
+import BookPdf from '@/components/eBooks/BookPdf.vue'
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     path: '/ebooks',
     name: 'eBooksPage',
     component: eBooksPage
+  },
+  {
+    path: '/pdf-viewer',
+    name: 'Bookpdf',
+    component: BookPdf  
   }
 ]
 
