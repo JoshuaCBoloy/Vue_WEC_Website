@@ -155,13 +155,14 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 270px;
   border: none;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .card-img-top {
