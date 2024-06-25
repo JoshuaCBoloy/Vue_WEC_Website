@@ -17,32 +17,48 @@
                 assumenda ipsa veritatis consectetur ea. Maiores quia nam distinctio iure aspernatur, illo excepturi
                 eligendi nesciunt voluptatibus consequatur aliquid facilis, animi quo officiis ex.</p>
               <div class="buttons d-flex mt-2">
-                <button class="btn btn-primary m-2"> <i class="bi bi-play-fill" style="color: black; padding: 0%; "></i>
-                  Read
-                  Now </button>
-                <button class="btn btn-secondary m-2"><i class="bi bi-info-circle" style=" padding: 0%;"></i> More
-                  Info</button>
+                <button class="btn btn-primary m-2" @click="openModal(featuredBook)">
+                  <i class="bi bi-play-fill" style="color: black; padding: 0%;"></i> Read Now
+                </button>
+                <button class="btn btn-secondary m-2">
+                  <i class="bi bi-info-circle" style="padding: 0%;"></i> More Info
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Books Grid Section -->
+      <!-- Books Carousel Section -->
       <section class="books-grid py-5">
         <div class="container">
           <h2 class="section-title mb-4">Popular eBooks</h2>
-          <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="book in books" :key="book.id">
-              <div class="card h-100">
-                <img :src="book.image" :alt="book.title" class="card-img-top" />
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">{{ book.title }}</h5>
-                  <p class="card-text">{{ book.author }}</p>
-                  <button class="btn btn-primary mt-auto" @click="openModal(book)">Read Now</button>
+          <div id="booksCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div v-for="(chunk, index) in bookChunks" :key="index"
+                :class="['carousel-item', { active: index === 0 }]">
+                <div class="row">
+                  <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="book in chunk" :key="book.id">
+                    <div class="card h-100">
+                      <img :src="book.image" :alt="book.title" class="card-img-top" />
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><b>{{ book.title }}</b></h5>
+                        <p class="card-text">{{ book.author }}</p>
+                        <button class="btn btn-primary mt-auto" @click="openModal(book)">Read Now</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#booksCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#booksCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       </section>
@@ -75,8 +91,25 @@ export default {
         { id: 7, title: "A History of American Christianity", author: "Leonard Woolsey Bacon", image: require('../assets/images/ebooks-cover/7.png'), description: "Description for Book 7" },
         { id: 8, title: "A History of Indian Philosophy, Volume 1", author: "Surendranath Dasgupta", image: require('../assets/images/ebooks-cover/8.png'), description: "Description for Book 8" }
       ],
-      selectedBook: {} // Initialize an empty object for the selected book
+      selectedBook: {}, // Initialize an empty object for the selected book
+      featuredBook: { // Data for the featured book
+        id: 5,
+        title: "A Field Book of the Stars",
+        author: "William Tyler Olcott",
+        image: require('../assets/images/ebooks-cover/5.png'),
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores soluta excepturi vero, harum labore quos libero iure natus error omnis iusto provident laudantium culpa quis eum mollitia assumenda ipsa veritatis consectetur ea."
+      }
     };
+  },
+  computed: {
+    bookChunks() {
+      const chunkSize = 4;
+      const chunks = [];
+      for (let i = 0; i < this.books.length; i += chunkSize) {
+        chunks.push(this.books.slice(i, i + chunkSize));
+      }
+      return chunks;
+    }
   },
   methods: {
     openModal(book) {
@@ -122,11 +155,13 @@ body {
 }
 
 .card {
-  width: 270px;
   border: none;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-img-top {

@@ -4,7 +4,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title text-center" id="bookModalLabel">{{ book.title }}</h5>
+          <h5 class="modal-title" id="bookModalLabel">{{ book.title }}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -59,9 +59,14 @@ export default {
   display: flex;
   justify-content: center;
 }
+
 .modal-footer .btn-primary {
   background-color: #f1c503;
   border: none;
   color: #110f0d;
+}
+
+.modal-title h5 {
+  text-align: center;
 }
 </style>
