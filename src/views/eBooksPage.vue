@@ -39,7 +39,7 @@
                 :class="['carousel-item', { active: index === 0 }]">
                 <div class="row">
                   <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="book in chunk" :key="book.id">
-                    <div class="card h-100">
+                    <div class="card">
                       <img :src="book.image" :alt="book.title" class="card-img-top" />
                       <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><b>{{ book.title }}</b></h5>
@@ -157,12 +157,19 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 600px;
   width: 270px;
   border: none;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  height:100%;
 }
 
 .card-img-top {
