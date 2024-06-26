@@ -65,6 +65,7 @@ footer {
   position: relative;
   width: 100%;
   bottom: 0;
+  background-color: #696969;
 }
 
 .footer-container {
