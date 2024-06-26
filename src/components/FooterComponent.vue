@@ -77,7 +77,7 @@ footer {
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 15px;
 }
 
 ul {
@@ -87,6 +87,8 @@ ul {
 a {
   display: inline-block;
   margin: 5px 0;
+  font-size: 13px;
+  text-decoration: none;
 }
 
 .social-icons a {
