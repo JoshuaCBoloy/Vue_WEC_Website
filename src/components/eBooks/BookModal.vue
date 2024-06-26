@@ -1,20 +1,35 @@
 <template>
-  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true"
-    ref="bookModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
+  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true" ref="bookModal">
+    <div class="modal-dialog modal-xl modal-dialog-centered"> <!-- Use modal-xl for extra width and center alignment -->
+      <div class="modal-content custom-modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="bookModalLabel">{{ book.title }}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img :src="book.image" :alt="book.title" class="img-fluid mb-3" />
-          <p><strong>Author:</strong> {{ book.author }}</p>
-          <p>{{ book.description }}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Read Now</button>
+          <div class="row">
+            <div class="col-md-4 image-container">
+              <div class="image-and-button">
+                <img :src="book.image" :alt="book.title" class="img-fluid img-thumbnail" />
+                <button type="button" class="btn btn-primary read-book-btn">Read book</button>
+              </div>
+            </div>
+            <div class="col-md-8 text-container">
+              <h5 class="modal-title" id="bookModalLabel">{{ book.title }}</h5>
+              <span>N/A</span>
+              <p><strong>Author:</strong> {{ book.author }}</p>
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium 
+                asperiores doloribus repellendus dolore suscipit quisquam odit eligendi, quae quas 
+                voluptatum provident quod nam placeat qui commodi unde veniam. Magnam!
+              </p>
+              <p class="small-font"><strong>Publish Date:</strong> {{ book.publishDate }}</p>
+              <p class="small-font"><strong>Publisher:</strong> {{ book.publisher }}</p>
+              <div class="category">
+                <p class="category-border">Category</p>
+                <p class="category-border">Category</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,22 +66,101 @@ export default {
 <style scoped>
 .modal-content {
   text-align: center;
-  background-color: #1c1c1c;
-  color: #f1c503;
+  color: #fff;
+  background-color: rgba(28, 28, 28, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: none; /* Remove border */
+  overflow: hidden; /* Prevent content overflow */
+  margin-top: -200px
+}
+
+.modal-header {
+  border-bottom: none; /* Remove header border */
+  display: flex;
+  justify-content: flex-end; /* Align close button to the right */
 }
 
 .modal-title {
-  display: flex;
-  justify-content: center;
+  text-align: left;
+  color: #fff;
+  font-size: 34px;
+  margin: 0; /* Remove margin */
 }
 
-.modal-footer .btn-primary {
+.img-fluid {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-thumbnail {
+  max-height: 300px;
+  width: 100%;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.read-book-btn {
   background-color: #f1c503;
   border: none;
   color: #110f0d;
+  width: 80%;
+  border-radius: 25px;
+  margin-top: 10px; /* Margin between image and button */
 }
 
-.modal-title h5 {
-  text-align: center;
+.text-container {
+  padding: 20px;
+  text-align: left;
+  margin-top: -30px;
+}
+
+/* Override Bootstrap .btn-close to make it white */
+.btn-close-white {
+  filter: invert(1);
+}
+
+.description {
+  font-size: 14px;
+}
+
+span {
+  color: #f1c503;
+}
+
+.small-font {
+  font-size: 15px;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.category-border {
+  background-color: #f1c503;
+  border-radius: 25px;
+  padding: 5px 10px; /* Adjust padding */
+  color: black;
+  font-weight: 400;
+}
+
+/* Additional custom styles for wider modal */
+@media (min-width: 992px) {
+  .modal-xl {
+    max-width: 80%; /* Adjust the percentage as needed */
+  }
 }
 </style>
