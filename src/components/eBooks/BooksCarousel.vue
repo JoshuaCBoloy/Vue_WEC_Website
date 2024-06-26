@@ -7,12 +7,14 @@
           <div v-for="(chunk, index) in bookChunks" :key="index" :class="['carousel-item', { active: index === 0 }]">
             <div class="row">
               <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="book in chunk" :key="book.id">
-                <div class="card">
+                <div class="card book-card">
                   <img :src="book.image" :alt="book.title" class="card-img-top" />
-                  <div class="card-body d-flex flex-column">
-                    <h5 class="card-title"><b>{{ book.title }}</b></h5>
-                    <p class="card-text">{{ book.author }}</p>
-                    <button class="btn btn-primary" @click="openModal(book)">Read Now</button>
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <h5 class="overlay-title"><b>{{ book.title }}</b></h5>
+                      <p class="overlay-author">{{ book.author }}</p>
+                      <button class="btn btn-primary" @click="openModal(book)">More Details</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -31,6 +33,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -90,16 +93,15 @@ export default {
   border-radius: 13px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease-in-out;
-  /* Smooth transition */
 }
 
 .card-img-top {
-  height: 300px;
+  height: 400px;
   border-bottom: 2px solid #f1c503;
 }
 
 .card-img-top img {
-  width: 80%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -136,7 +138,6 @@ textarea {
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
-  /* Reduce the clickable area */
 }
 
 .carousel-control-prev-icon,
@@ -146,16 +147,55 @@ textarea {
 
 .carousel-control-prev {
   left: -5%;
-  /* Adjust distance to move it farther */
 }
 
 .carousel-control-next {
   right: -4%;
-  /* Adjust distance to move it farther */
 }
 
 .carousel-inner {
   transition: transform 0.5s ease-in-out;
-  /* Smooth transition */
+}
+
+.card.book-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card.book-card img {
+  transition: transform 0.3s ease;
+}
+
+.card.book-card:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card.book-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.overlay-title,
+.overlay-author {
+  margin: 0;
 }
 </style>
