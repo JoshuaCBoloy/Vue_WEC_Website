@@ -1,17 +1,35 @@
 <template>
-  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true"
-    ref="bookModal">
-    <div class="modal-dialog modal-xl modal-dialog-centered"> <!-- Use modal-xl for extra width and center alignment -->
+  <div
+    class="modal fade"
+    id="bookModal"
+    tabindex="-1"
+    aria-labelledby="bookModalLabel"
+    aria-hidden="true"
+    ref="bookModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <!-- Use modal-xl for extra width and center alignment -->
       <div class="modal-content custom-modal-content">
         <div class="modal-header">
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <div class="row">
             <div class="col-md-4 image-container">
               <div class="image-and-button">
-                <img :src="book.image" :alt="book.title" class="img-fluid img-thumbnail" />
-                <button type="button" class="btn btn-primary read-book-btn">Read Book</button>
+                <img
+                  :src="book.image"
+                  :alt="book.title"
+                  class="img-fluid img-thumbnail"
+                />
+                <button type="button" class="btn btn-primary read-book-btn">
+                  Read Book
+                </button>
               </div>
             </div>
             <div class="col-md-8 text-container">
@@ -19,15 +37,27 @@
               <span>N/A</span>
               <p><strong>Author:</strong> {{ book.author }}</p>
               <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium
-                asperiores doloribus repellendus dolore suscipit quisquam odit eligendi, quae quas
-                voluptatum provident quod nam placeat qui commodi unde veniam. Magnam!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+                praesentium asperiores doloribus repellendus dolore suscipit quisquam odit
+                eligendi, quae quas voluptatum provident quod nam placeat qui commodi unde
+                veniam. Magnam!
               </p>
-              <p class="small-font"><strong>Publish Date:</strong> {{ book.publishDate }}</p>
+              <p class="small-font">
+                <strong>Publish Date:</strong> {{ book.publishDate }}
+              </p>
               <p class="small-font"><strong>Publisher:</strong> {{ book.publisher }}</p>
               <div class="category">
                 <p class="category-border">Category</p>
                 <p class="category-border">Category</p>
+              </div>
+              <div class="rating">
+                <font-awesome-icon
+                  v-for="n in 5"
+                  :key="n"
+                  :icon="[book.userRating >= n ? 'fas' : 'far', 'star']"
+                  class="fa-star"
+                  @click="setRating(book, n)"
+                />
               </div>
             </div>
           </div>
@@ -38,18 +68,21 @@
 </template>
 
 <script>
-import * as bootstrap from 'bootstrap';
+import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
 
 export default {
-  name: 'BookModal',
+  name: "BookModal",
   props: {
     book: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
+    setRating(book, rating) {
+      book.userRating = rating;
+    },
     showModal() {
       this.$nextTick(() => {
         const modal = new window.bootstrap.Modal(this.$refs.bookModal);
@@ -59,8 +92,8 @@ export default {
     hideModal() {
       const modal = new window.bootstrap.Modal(this.$refs.bookModal);
       modal.hide();
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -76,7 +109,7 @@ export default {
   /* Remove border */
   overflow: hidden;
   /* Prevent content overflow */
-  margin-top: -200px
+  margin-top: -200px;
 }
 
 .modal-header {
@@ -165,6 +198,10 @@ span {
   /* Adjust padding */
   color: black;
   font-weight: 400;
+}
+
+.rating {
+  color: #f1c503;
 }
 
 /* Additional custom styles for wider modal */
