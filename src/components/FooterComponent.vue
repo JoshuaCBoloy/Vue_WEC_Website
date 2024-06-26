@@ -17,34 +17,34 @@
         <div class="col-md-2 mb-4 d-flex flex-column align-items-center">
           <h5>Useful Links</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">About Us</a></li>
-            <li><a href="#" class="text-white">Contact Us</a></li>
-            <li><a href="#" class="text-white">Terms of Service</a></li>
-            <li><a href="#" class="text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> About Us</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Contact Us</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Terms of Service</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Privacy Policy</a></li>
           </ul>
         </div>
         <div class="col-md-2 mb-4 d-flex flex-column align-items-center">
           <h5>eBooks</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Book Library</a></li>
-            <li><a href="#" class="text-white">Book Categories</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Book Library</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Book Categories</a></li>
           </ul>
         </div>
         <div class="col-md-2 mb-4 d-flex flex-column align-items-center">
           <h5>eStudy Bible</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Parallel: Side-by-Side Bible</a></li>
-            <li><a href="#" class="text-white">King James Hebrew-Greek Interlinear Bible</a></li>
-            <li><a href="#" class="text-white">Cross-Reference Bible</a></li>
-            <li><a href="#" class="text-white">Wisdom Bible Plus</a></li>
-            <li><a href="#" class="text-white">Bible Atlas</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Parallel: Side-by-Side Bible</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> King James Hebrew-Greek Interlinear Bible</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Cross-Reference Bible</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Wisdom Bible Plus</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Bible Atlas</a></li>
           </ul>
         </div>
         <div class="col-md-2 mb-4 d-flex flex-column align-items-center">
           <h5>Pearls of Wisdom</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Ancient Hebrew Calendar</a></li>
-            <li><a href="#" class="text-white">Wisdom Blogs</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Ancient Hebrew Calendar</a></li>
+            <li><a href="#" class="text-white"><i class="fas fa-arrow-right"></i> Wisdom Blogs</a></li>
           </ul>
         </div>
       </div>
@@ -89,6 +89,17 @@ a {
   margin: 5px 0;
   font-size: 13px;
   text-decoration: none;
+  position: relative;
+  padding-left: 15px;
+}
+
+a i.fa-arrow-right {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f1c503;
+  font-size: 0.8rem;
 }
 
 .social-icons a {
