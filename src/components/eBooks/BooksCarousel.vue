@@ -2,7 +2,7 @@
   <div class="books-grid py-5">
     <div class="container">
       <h2 class="section-title mb-4">Popular eBooks</h2>
-      <div id="booksCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="booksCarousel" class="carousel slide">
         <div class="carousel-inner">
           <div v-for="(chunk, index) in bookChunks" :key="index" :class="['carousel-item', { active: index === 0 }]">
             <div class="row">

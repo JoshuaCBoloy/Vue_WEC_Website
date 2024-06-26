@@ -5,7 +5,6 @@
       <a href="/home" class="logo d-flex align-items-center me-auto me-lg-0">
         <img src="../assets/images/wisdom-dark.png" alt="">
         <h1 class="sitename">Wisdom e<span>B</span>ooks Club</h1>
-        <span></span>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -55,6 +54,7 @@
             </ul>
           </li>
           <li><router-link to="/login">Login</router-link></li>
+          <li><router-link to="/pdfviewer">Read Now</router-link></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

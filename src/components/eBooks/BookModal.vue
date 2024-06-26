@@ -11,7 +11,7 @@
             <div class="col-md-4 image-container">
               <div class="image-and-button">
                 <img :src="book.image" :alt="book.title" class="img-fluid img-thumbnail" />
-                <button type="button" class="btn btn-primary read-book-btn">Read book</button>
+                <button type="button" class="btn btn-primary read-book-btn">Read Book</button>
               </div>
             </div>
             <div class="col-md-8 text-container">
