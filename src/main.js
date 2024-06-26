@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import HeaderComponent from './views/HeaderComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
 import LoginPage from './views/LoginPage.vue';
 import RegisterPage from './views/RegisterPage.vue';
 import './assets/styles/styles.css';

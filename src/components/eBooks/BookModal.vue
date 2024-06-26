@@ -1,5 +1,6 @@
 <template>
-  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true" ref="bookModal">
+  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true"
+    ref="bookModal">
     <div class="modal-dialog modal-xl modal-dialog-centered"> <!-- Use modal-xl for extra width and center alignment -->
       <div class="modal-content custom-modal-content">
         <div class="modal-header">
@@ -18,8 +19,8 @@
               <span>N/A</span>
               <p><strong>Author:</strong> {{ book.author }}</p>
               <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium 
-                asperiores doloribus repellendus dolore suscipit quisquam odit eligendi, quae quas 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium
+                asperiores doloribus repellendus dolore suscipit quisquam odit eligendi, quae quas
                 voluptatum provident quod nam placeat qui commodi unde veniam. Magnam!
               </p>
               <p class="small-font"><strong>Publish Date:</strong> {{ book.publishDate }}</p>
@@ -67,24 +68,31 @@ export default {
 .modal-content {
   text-align: center;
   color: #fff;
-  background-color: rgba(28, 28, 28, 0.8); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Blur effect */
-  border: none; /* Remove border */
-  overflow: hidden; /* Prevent content overflow */
+  background-color: rgba(28, 28, 28, 0.8);
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  /* Blur effect */
+  border: none;
+  /* Remove border */
+  overflow: hidden;
+  /* Prevent content overflow */
   margin-top: -200px
 }
 
 .modal-header {
-  border-bottom: none; /* Remove header border */
+  border-bottom: none;
+  /* Remove header border */
   display: flex;
-  justify-content: flex-end; /* Align close button to the right */
+  justify-content: flex-end;
+  /* Align close button to the right */
 }
 
 .modal-title {
   text-align: left;
   color: #fff;
   font-size: 34px;
-  margin: 0; /* Remove margin */
+  margin: 0;
+  /* Remove margin */
 }
 
 .img-fluid {
@@ -116,7 +124,8 @@ export default {
   color: #110f0d;
   width: 80%;
   border-radius: 25px;
-  margin-top: 10px; /* Margin between image and button */
+  margin-top: 10px;
+  /* Margin between image and button */
 }
 
 .text-container {
@@ -152,7 +161,8 @@ span {
 .category-border {
   background-color: #f1c503;
   border-radius: 25px;
-  padding: 5px 10px; /* Adjust padding */
+  padding: 5px 10px;
+  /* Adjust padding */
   color: black;
   font-weight: 400;
 }
@@ -160,7 +170,8 @@ span {
 /* Additional custom styles for wider modal */
 @media (min-width: 992px) {
   .modal-xl {
-    max-width: 80%; /* Adjust the percentage as needed */
+    max-width: 80%;
+    /* Adjust the percentage as needed */
   }
 }
 </style>

@@ -1,17 +1,22 @@
 <template>
   <HeaderComponent />
   <HeroComponent />
+  <FooterComponent />
+
 </template>
 
 <script>
-import HeaderComponent from './HeaderComponent.vue';
-import HeroComponent from './HeroComponent.vue';
+import FooterComponent from '../components/FooterComponent.vue';
+import HeaderComponent from '../components/HeaderComponent.vue';
+import HeroComponent from '../components/HeroComponent.vue';
+
 
 export default {
   name: 'HomeView',
   components: {
     HeaderComponent,
-    HeroComponent
+    HeroComponent,
+    FooterComponent
   }
 }
 </script>

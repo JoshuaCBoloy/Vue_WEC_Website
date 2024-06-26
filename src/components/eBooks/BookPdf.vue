@@ -1,31 +1,23 @@
 <template>
-  <div class="pdf-viewer">
-    <iframe :src="pdfUrl" width="100%" height="100%" style="border:none;"></iframe>
+  <div>
+    <HeaderComponent />
+    <div class="pdf-container">
+
+    </div>
+    <FooterComponent />
   </div>
 </template>
 
 <script>
+import FooterComponent from '../FooterComponent.vue';
+import HeaderComponent from '../HeaderComponent.vue';
+
 export default {
-  name: 'PdfViewerPage',
-  data() {
-    return {
-      pdfUrl: ''
-    };
-  },
-  created() {
-    // Get the PDF URL from the route params
-    this.pdfUrl = this.$route.params.pdfUrl;
+  components: {
+    FooterComponent,
+    HeaderComponent
   }
-};
+}
 </script>
 
-<style scoped>
-.pdf-viewer {
-  width: 100vw;
-  height: 100vh;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style scoped></style>

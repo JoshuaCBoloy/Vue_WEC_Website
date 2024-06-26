@@ -37,19 +37,22 @@
       <BookModal :book="selectedBook" ref="bookModal" />
     </div>
   </body>
+  <FooterComponent />
 </template>
 
 <script>
-import HeaderComponent from './HeaderComponent.vue';
+import HeaderComponent from '../components/HeaderComponent.vue';
 import BookModal from '../components/eBooks/BookModal.vue';
 import BooksCarousel from '../components/eBooks/BooksCarousel.vue';
+import FooterComponent from '../components/FooterComponent.vue';
 
 export default {
   name: "eBooksPage",
   components: {
     HeaderComponent,
     BookModal,
-    BooksCarousel
+    BooksCarousel,
+    FooterComponent
   },
   data() {
     return {

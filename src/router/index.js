@@ -31,7 +31,7 @@ const routes = [
     component: eBooksPage
   },
   {
-    path: '/pdf-viewer',
+    path: '/pdfviewer',
     name: 'Bookpdf',
     component: BookPdf  
   }
