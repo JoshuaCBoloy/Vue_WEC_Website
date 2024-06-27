@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent />
+  <NavbarComponent />
 
   <body>
     <div class="ebooks-page">
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import HeaderComponent from '../components/HeaderComponent.vue';
+import NavbarComponent from '../components/NavbarComponent.vue';
 import BookModal from '../components/eBooks/BookModal.vue';
 import BooksCarousel from '../components/eBooks/BooksCarousel.vue';
 import FooterComponent from '../components/FooterComponent.vue';
@@ -49,7 +49,7 @@ import FooterComponent from '../components/FooterComponent.vue';
 export default {
   name: "eBooksPage",
   components: {
-    HeaderComponent,
+    NavbarComponent,
     BookModal,
     BooksCarousel,
     FooterComponent

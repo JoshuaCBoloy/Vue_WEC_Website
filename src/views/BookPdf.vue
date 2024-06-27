@@ -31,7 +31,7 @@
 <script>
 import WebViewer from '@pdftron/webviewer';
 import FooterComponent from '../components/FooterComponent.vue';
-import HeaderComponent from '../components/HeaderComponent.vue';
+import HeaderComponent from '../components/NavbarComponent.vue';
 // import pdfFile from '@/assets/pdf-files/1.pdf';
 
 

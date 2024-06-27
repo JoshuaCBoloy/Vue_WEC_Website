@@ -54,7 +54,6 @@
             </ul>
           </li>
           <li><router-link to="/login">Login</router-link></li>
-          <li><router-link to="/pdfviewer">Read Now</router-link></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

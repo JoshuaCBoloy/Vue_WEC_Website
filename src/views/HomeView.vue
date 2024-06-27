@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent />
+  <NavbarComponent />
   <HeroComponent />
   <FooterComponent />
 
@@ -7,14 +7,14 @@
 
 <script>
 import FooterComponent from '../components/FooterComponent.vue';
-import HeaderComponent from '../components/HeaderComponent.vue';
+import NavbarComponent from '../components/NavbarComponent.vue';
 import HeroComponent from '../components/HeroComponent.vue';
 
 
 export default {
   name: 'HomeView',
   components: {
-    HeaderComponent,
+    NavbarComponent,
     HeroComponent,
     FooterComponent
   }
