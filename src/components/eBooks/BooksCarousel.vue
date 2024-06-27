@@ -170,8 +170,8 @@ textarea {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(4px);
   color: black;
   display: flex;
   flex-direction: column;
