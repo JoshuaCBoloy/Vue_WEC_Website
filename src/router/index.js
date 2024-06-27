@@ -4,6 +4,12 @@ import LoginPage from '@/views/LoginPage.vue'
 import RegisterPage from '@/views/RegisterPage.vue'
 import eBooksPage from '@/views/eBooksPage.vue'
 import BookPdf from '@/views/BookPdf.vue'
+import ParallelPage from '@/views/ParallelPage.vue'
+import KingJames from '@/views/KingJames.vue'
+import CrossReference from '@/views/CrossReference.vue'
+import WisdomBible from '@/views/WisdomBible.vue'
+import BiblePlus from '@/views/BiblePlus.vue'
+import BibleAtlas from '@/views/BibleAtlas.vue'
 
 const routes = [
   {
@@ -35,6 +41,36 @@ const routes = [
     name: 'BookPdf',
     component: BookPdf,
     props: true
+  },
+  {
+    path: '/parallel',
+    name: 'ParallelPage',
+    component: ParallelPage
+  },
+  {
+    path: '/kingjames',
+    name: 'KingJames',
+    component: KingJames
+  },
+  {
+    path: '/crossreference',
+    name: 'CrossReference',
+    component: CrossReference
+  },
+  {
+    path: '/wisdombible',
+    name: 'WisdomBible',
+    component: WisdomBible
+  },
+  {
+    path: '/bibleplus',
+    name: 'BiblePlus',
+    component: BiblePlus
+  },
+  {
+    path: '/bibleatlas',
+    name: 'BibleAtlas',
+    component: BibleAtlas
   }
 ]
 

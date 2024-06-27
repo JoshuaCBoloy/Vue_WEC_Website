@@ -46,14 +46,15 @@
           <li class="dropdown"><a href="#"><span>eStudy Bible</span> <i
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Parallel: Side-by-Side Bible </a></li>
-              <li><a href="#">King James Hebrew-Greek Interlinear Bible</a></li>
-              <li><a href="#">Cross-Reference Bible</a></li>
-              <li><a href="#">Wisdom Bible Plus</a></li>
-              <li><a href="#">Bible Atlas</a></li>
+              <li><router-link to="/parallel">Parallel: Side-by-Side Bible</router-link></li>
+              <li><router-link to="/kingjames">King James Hebrew-Greek Interlinear Bible</router-link></li>
+              <li><router-link to="crossreference">Cross-Reference Bible</router-link></li>
+              <li><router-link to="wisdombible">Wisdom Bible Plus</router-link></li>
+              <li><router-link to="bibleatlas">Bible Atlas</router-link></li>
             </ul>
           </li>
           <li><router-link to="/login">Login</router-link></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
