@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import RegisterPage from '@/views/RegisterPage.vue'
 import eBooksPage from '@/views/eBooksPage.vue'
-import BookPdf from '@/components/eBooks/BookPdf.vue'
+import BookPdf from '@/views/BookPdf.vue'
 
 const routes = [
   {
@@ -31,9 +31,10 @@ const routes = [
     component: eBooksPage
   },
   {
-    path: '/pdfviewer',
-    name: 'Bookpdf',
-    component: BookPdf  
+    path: '/book',
+    name: 'BookPdf',
+    component: BookPdf,
+    props: true
   }
 ]
 
