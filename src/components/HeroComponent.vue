@@ -7,16 +7,16 @@
             <div class="row justify-content-left text-center">
                 <div>
                     <h2><span>Access our extensive eBook library and eStudy Bible software</span></h2>
-                    <p>Gain exclusive access to a wealth of digital resources curated to 
-                        enrich your reading experience and deepen your 
+                    <p>Gain exclusive access to a wealth of digital resources curated to
+                        enrich your reading experience and deepen your
                         understanding of scripture.
                     </p>
                     <ReusableButton buttonClass="btn-primary">Join Now!</ReusableButton>
                 </div>
             </div>
         </div>
-        
-    </section>    
+
+    </section>
 </template>
 
 <script>
@@ -31,5 +31,8 @@ export default {
 </script>
 
 <style scoped>
-
+.hero img {
+    width: 100%;
+    height: 100vh;
+}
 </style>
