@@ -34,11 +34,8 @@
   </div>
 </template>
 
-
 <script>
 export default {
-  components: {
-  },
   props: {
     books: {
       type: Array,
@@ -56,9 +53,6 @@ export default {
     }
   },
   methods: {
-    setRating(book, rating) {
-      book.userRating = rating;
-    },
     openModal(book) {
       this.$emit('open-modal', book);
     }
@@ -172,21 +166,24 @@ textarea {
 
 .overlay {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 12px;
 }
 
 .card.book-card:hover .overlay {
+  top: 0;
   opacity: 1;
 }
 
