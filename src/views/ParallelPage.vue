@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container custom-container">
     <NavbarComponent />
     <div class="parallel-container">
       <div class="parallel-header text-center my-4">
@@ -26,13 +26,13 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 col-lg-5">
           <div class="content-section">
             <h2>Left Column</h2>
             <p>Content for the left column goes here.</p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-lg-5">
           <div class="content-section">
             <h2>Right Column</h2>
             <p>Content for the right column goes here.</p>
@@ -40,8 +40,8 @@
         </div>
       </div>
     </div>
-    <FooterComponent />
   </div>
+  <FooterComponent />
 </template>
 
 <script>
@@ -63,9 +63,15 @@ export default {
 </script>
 
 <style scoped>
+.custom-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 100%;
+  background-color: #f4f0db;
+}
+
 .parallel-container {
   margin-top: 131px;
-  height: 100vh;
 }
 
 .parallel-header {
@@ -76,7 +82,16 @@ export default {
 
 .books {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .books {
+    flex-direction: row;
+    gap: 40px;
+  }
 }
 
 .book-section {
@@ -88,7 +103,7 @@ export default {
 .parallel-header h1 {
   font-size: 36px;
   font-weight: 400;
-  color: #f1c503;
+  color: #000;
 }
 
 .form-select {
@@ -100,10 +115,10 @@ export default {
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   background-color: #f8f9fa;
-  height: 100%;
   min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 20px;
 }
 </style>
