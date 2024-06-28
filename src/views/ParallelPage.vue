@@ -305,7 +305,10 @@ h1 {
 
 .form-select {
   margin-top: 10px;
-  width: 250px;
+  width: 40%;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 25px;
 }
 
 .version-dropdown {
