@@ -1,6 +1,17 @@
 <template>
   <div class="container custom-container">
     <NavbarComponent />
+    <div class="settings-icons">
+      <div class="filter-icon" @click="handleFirstIconClick">
+        <i class="bi bi-filter"></i>
+      </div>
+      <div class="layer-icon" @click="handleSecondIconClick">
+        <i class="bi bi-layers-fill"></i>
+      </div>
+      <div class="next-icon" @click="handleNextPageClick">
+        <i class="bi bi-chevron-right"></i>
+      </div>
+    </div>
     <div class="parallel-container">
       <div class="parallel-header text-center my-4">
         <h1>Parallel: Side-by-Side Bible</h1>
@@ -31,9 +42,9 @@
           <div class="justify-content-center mb-3">
             <select class="form-select form-select-sm bible-viewer version-dropdown">
               <option selected>English</option>
-              <option selected>English</option>
-              <option selected>English</option>
-              <option selected>English</option>
+              <option>English</option>
+              <option>English</option>
+              <option>English</option>
             </select>
           </div>
         </div>
@@ -42,9 +53,9 @@
           <div class="justify-content-center mb-3">
             <select class="form-select form-select-sm bible-viewer version-dropdown">
               <option selected>English</option>
-              <option selected>English</option>
-              <option selected>English</option>
-              <option selected>English</option>
+              <option>English</option>
+              <option>English</option>
+              <option>English</option>
             </select>
           </div>
         </div>
@@ -70,100 +81,93 @@
 </template>
 
 <script>
-import NavbarComponent from "@/components/NavbarComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+import NavbarComponent from '@/components/NavbarComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
 export default {
   components: {
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   },
   data() {
     return {
       books: [
-        "Genesis",
-        "Exodus",
-        "Leviticus",
-        "Numbers",
-        "Deuteronomy",
-        "Joshua",
-        "Judges",
-        "Ruth",
-        "1 Samuel",
-        "2 Samuel",
-        "1 Kings",
-        "2 Kings",
-        "1 Chronicles",
-        "2 Chronicles",
-        "Ezra",
-        "Nehemiah",
-        "Esther",
-        "Job",
-        "Psalms",
-        "Proverbs",
-        "Ecclesiastes",
-        "Song of Solomon",
-        "Isaiah",
-        "Jeremiah",
-        "Lamentations",
-        "Ezekiel",
-        "Daniel",
-        "Hosea",
-        "Joel",
-        "Amos",
-        "Obadiah",
-        "Jonah",
-        "Micah",
-        "Nahum",
-        "Habakkuk",
-        "Zephaniah",
-        "Haggai",
-        "Zechariah",
-        "Malachi",
-        "Matthew",
-        "Mark",
-        "Luke",
-        "John",
-        "Acts",
-        "Romans",
-        "1 Corinthians",
-        "2 Corinthians",
-        "Galatians",
-        "Ephesians",
-        "Philippians",
-        "Colossians",
-        "1 Thessalonians",
-        "2 Thessalonians",
-        "1 Timothy",
-        "2 Timothy",
-        "Titus",
-        "Philemon",
-        "Hebrews",
-        "James",
-        "1 Peter",
-        "2 Peter",
-        "1 John",
-        "2 John",
-        "3 John",
-        "Jude",
-        "Revelation",
+        'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth',
+        '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra',
+        'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon',
+        'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos',
+        'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah',
+        'Malachi', 'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1 Corinthians', '2 Corinthians',
+        'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians',
+        '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews', 'James', '1 Peter', '2 Peter',
+        '1 John', '2 John', '3 John', 'Jude', 'Revelation'
       ],
       chapters: Array.from({ length: 50 }, (_, i) => i + 1), // Assuming Genesis has 50 chapters
     };
   },
-};
+  methods: {
+    handleFirstIconClick() {
+      // Handle the first icon click
+    },
+    handleSecondIconClick() {
+      // Handle the second icon click
+    },
+    handleNextPageClick() {
+      // Handle the next page icon click
+    }
+  }
+}
 </script>
 
 <style scoped>
-h1 {
-  font-weight: 700;
-  font-size: 20px;
-}
 .custom-container {
   margin: 20px auto;
   padding: 20px;
   max-width: 100%;
   background-color: #f4f0db;
+  position: relative;
+  /* Needed for the icons to be positioned relative to this container */
+}
+
+.settings-icons {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.filter-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.layer-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.next-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .parallel-container {
@@ -187,7 +191,6 @@ h1 {
   padding: 0;
   display: flex;
   gap: 20px;
-  /* Add spacing between dropdowns */
 }
 
 .dropdown {
@@ -216,9 +219,7 @@ h1 {
   background-color: #f9f9f9;
   min-width: 160px;
   max-height: 200px;
-  /* Set a max-height for the scrollable list */
   overflow-y: auto;
-  /* Enable vertical scrolling */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -243,7 +244,6 @@ h1 {
 .form-select {
   margin-top: 10px;
   width: 250px;
-  /* Set the desired width for both dropdowns */
 }
 
 .version-dropdown {
