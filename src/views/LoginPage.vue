@@ -74,7 +74,7 @@ export default {
 }
 
 .form-container {
-  max-width: 500px;
+  max-width: 470px;
   width: 100%;
   margin: 50px 20px;
   padding: 20px;
@@ -113,17 +113,21 @@ export default {
   color: #f1c503;
   font-family: "Glegoo", sans-serif;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 19px;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 37px;
+  margin-bottom: 7px;
 }
 
 .welcome-text {
   color: #fff;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 20px;
+}
+
+.mb-3 {
+  font-size: 12px
 }
 
 .btn-google {
