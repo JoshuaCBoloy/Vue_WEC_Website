@@ -135,7 +135,7 @@ export default {
 }
 
 .btn-facebook {
-  background-color: #3b5998;
+  background-color: #fff;
   border: none;
   padding: 10px;
   margin: 5px;
@@ -143,11 +143,11 @@ export default {
 }
 
 .btn-google .fa-google {
-  color: #db4437;
+  color: #f1c503;
 }
 
 .btn-facebook .fa-facebook {
-  color: #fff;
+  color: #f1c503;
 }
 
 /* Ensure buttons look consistent */
