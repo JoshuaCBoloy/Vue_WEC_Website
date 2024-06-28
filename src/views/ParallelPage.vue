@@ -101,7 +101,7 @@ export default {
 }
 
 .parallel-header h1 {
-  font-size: 36px;
+  font-size: 27px;
   font-weight: 400;
   color: #000;
 }
@@ -120,5 +120,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
+  text-align: center;
 }
 </style>
