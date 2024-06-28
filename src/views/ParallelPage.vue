@@ -4,27 +4,28 @@
     <div class="parallel-container">
       <div class="parallel-header text-center my-4">
         <h1>Parallel: Side-by-Side Bible</h1>
-        <div class="books">
-          <div class="book-section">
-            <h1>Exodus</h1>
-            <select class="form-select" v-model="exodusVersion">
-              <option value="KJV">King James Version</option>
-              <option value="NIV">New International Version</option>
-              <option value="ESV">English Standard Version</option>
-              <!-- Add more versions as needed -->
-            </select>
-          </div>
-          <div class="book-section">
-            <h1>Numbers</h1>
-            <select class="form-select" v-model="numbersVersion">
-              <option value="KJV">King James Version</option>
-              <option value="NIV">New International Version</option>
-              <option value="ESV">English Standard Version</option>
-              <!-- Add more versions as needed -->
-            </select>
-          </div>
-        </div>
       </div>
+      <nav class="navbar navbar-expand-lg justify-content-center">
+        <ul class="nav justify-content-center">
+          <li class="dropdown">
+            <div class="dropdown-toggle">
+              <h1 id="selected-book">Genesis</h1>
+            </div>
+            <ul class="dropdown-menu">
+              <li v-for="book in books" :key="book">{{ book }}</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <div class="dropdown-toggle">
+              <h1 id="selected-chapter">1</h1>
+            </div>
+            <ul class="dropdown-menu">
+              <li v-for="chapter in chapters" :key="chapter">{{ chapter }}</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
           <div class="content-section">
@@ -40,8 +41,8 @@
         </div>
       </div>
     </div>
+    <FooterComponent />
   </div>
-  <FooterComponent />
 </template>
 
 <script>
@@ -55,8 +56,18 @@ export default {
   },
   data() {
     return {
-      exodusVersion: 'KJV',
-      numbersVersion: 'KJV'
+      books: [
+        'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth',
+        '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra',
+        'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon',
+        'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos',
+        'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah',
+        'Malachi', 'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1 Corinthians', '2 Corinthians',
+        'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians',
+        '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews', 'James', '1 Peter', '2 Peter',
+        '1 John', '2 John', '3 John', 'Jude', 'Revelation'
+      ],
+      chapters: Array.from({ length: 50 }, (_, i) => i + 1), // Assuming Genesis has 50 chapters
     };
   }
 }
@@ -76,32 +87,70 @@ export default {
 
 .parallel-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.books {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .books {
-    flex-direction: row;
-    gap: 40px;
-  }
-}
-
-.book-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .parallel-header h1 {
   font-size: 27px;
+  font-weight: 400;
+  color: #000;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  /* Add spacing between dropdowns */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-toggle i {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.dropdown-toggle:hover i {
+  visibility: visible;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 200px;
+  /* Set a max-height for the scrollable list */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.parallel-header h1 {
+  font-size: 36px;
   font-weight: 400;
   color: #000;
 }
