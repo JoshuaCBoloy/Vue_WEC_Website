@@ -4,29 +4,6 @@
     <div class="parallel-container">
       <div class="parallel-header text-center my-4">
         <h1>Parallel: Side-by-Side Bible</h1>
-<<<<<<< HEAD
-        <div class="books">
-          <div class="book-section">
-            <h1 class="book-section-title">Exodus</h1>
-            <select class="form-select" v-model="exodusVersion">
-              <option value="KJV">King James Version</option>
-              <option value="NIV">New International Version</option>
-              <option value="ESV">English Standard Version</option>
-              <!-- Add more versions as needed -->
-            </select>
-          </div>
-          <div class="book-section">
-            <h1 class="book-section-title">Numbers</h1>
-            <select class="form-select" v-model="numbersVersion">
-              <option value="KJV">King James Version</option>
-              <option value="NIV">New International Version</option>
-              <option value="ESV">English Standard Version</option>
-              <!-- Add more versions as needed -->
-            </select>
-          </div>
-        </div>
-=======
->>>>>>> 8ca95d492221eadd25d0ce8716e336c890c195e7
       </div>
       <nav class="navbar navbar-expand-lg justify-content-center">
         <ul class="nav justify-content-center">
@@ -64,8 +41,8 @@
         </div>
       </div>
     </div>
-    <FooterComponent />
   </div>
+  <FooterComponent />
 </template>
 
 <script>
