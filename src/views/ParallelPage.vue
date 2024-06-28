@@ -6,7 +6,7 @@
         <h1>Parallel: Side-by-Side Bible</h1>
         <div class="books">
           <div class="book-section">
-            <h1>Exodus</h1>
+            <h1 class="book-section-title">Exodus</h1>
             <select class="form-select" v-model="exodusVersion">
               <option value="KJV">King James Version</option>
               <option value="NIV">New International Version</option>
@@ -15,7 +15,7 @@
             </select>
           </div>
           <div class="book-section">
-            <h1>Numbers</h1>
+            <h1 class="book-section-title">Numbers</h1>
             <select class="form-select" v-model="numbersVersion">
               <option value="KJV">King James Version</option>
               <option value="NIV">New International Version</option>
@@ -121,5 +121,9 @@ export default {
   justify-content: center;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.book-section-title {
+  color: #f1c503;
 }
 </style>
