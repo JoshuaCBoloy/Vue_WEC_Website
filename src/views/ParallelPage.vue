@@ -37,41 +37,33 @@
         </ul>
       </nav>
 
-      <div class="row mx-5">
-        <div class="col viewer column">
-          <div class="justify-content-center mb-3">
-            <select class="form-select form-select-sm bible-viewer version-dropdown">
-              <option selected>English</option>
-              <option>English</option>
-              <option>English</option>
-              <option>English</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col viewer column">
-          <div class="justify-content-center mb-3">
-            <select class="form-select form-select-sm bible-viewer version-dropdown">
-              <option selected>English</option>
-              <option>English</option>
-              <option>English</option>
-              <option>English</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
-          <div class="content-section">
-            <h2>Left Column</h2>
-            <p>Content for the left column goes here.</p>
+          <div class="viewer">
+            <select class="form-select form-select-sm bible-viewer version-dropdown">
+              <option selected>English</option>
+              <option>English</option>
+              <option>English</option>
+              <option>English</option>
+            </select>
+            <div class="content-section">
+              <h2>Left Column</h2>
+              <p>Content for the left column goes here.</p>
+            </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-5">
-          <div class="content-section">
-            <h2>Right Column</h2>
-            <p>Content for the right column goes here.</p>
+          <div class="viewer">
+            <select class="form-select form-select-sm bible-viewer version-dropdown">
+              <option selected>English</option>
+              <option>English</option>
+              <option>English</option>
+              <option>English</option>
+            </select>
+            <div class="content-section">
+              <h2>Right Column</h2>
+              <p>Content for the right column goes here.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -305,17 +297,22 @@ h1 {
 
 .form-select {
   margin-top: 10px;
-  width: 40%;
+  width: 100%; /* Use 100% width */
   font-size: 17px;
   text-align: center;
   border-radius: 25px;
 }
 
 .version-dropdown {
-  width: 250px;
+  width: 100%; /* 100% width to match parent container */
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.viewer {
+  width: 100%; /* Ensure viewer takes full width of parent */
+  text-align: center; /* Center the content */
 }
 
 .content-section {
@@ -326,7 +323,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 10px;
   text-align: center;
+  width: 100%; /* 100% width to match parent container */
 }
 </style>
